@@ -1,8 +1,7 @@
 <template>
 <div>
-    <h1>Pagina 2</h1>
+    <h1>Pagina 3</h1>
     <p>Bem vindo {{nome}}</p>
-    <p>Este é o produto {{produto}}</p>
     <button class="btn btn-primary">Clique aqui</button>
 </div>
   
@@ -10,7 +9,6 @@
 
 <script>
 export default {
-    layout: 'tema2',
     data() {
         return {
             nome: 'Valdir'
