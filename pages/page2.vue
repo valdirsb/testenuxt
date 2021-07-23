@@ -8,6 +8,8 @@
     <p>Quantidade: {{qt}}</p>
     <button v-on:click="rem()" class="btn btn-primary">retirar</button>
     <p>Valor Total: {{valortotal}}</p>
+
+    <p>{{ping.pong}}</p>
 </div>
   
 </template>
@@ -17,6 +19,7 @@ export default {
     layout: 'tema2',
     data() {
         return {
+            ping:{},
             nome: 'Valdir',
             qt:1,
             produto: {
@@ -27,6 +30,13 @@ export default {
             valortotal: 0,
         }
     },
+
+    async fetch() {
+      this.ping = await fetch(
+        'https://vscond.vasan.com.br/api/ping'
+      ).then(res => res.json())
+    },
+
     methods: {
         add: function(){
             this.qt++
